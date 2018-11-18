@@ -1,0 +1,32 @@
+PODS:
+  - YandexMapKit (3.1.2):
+    - YandexRuntime (~> 3.1)
+  - YandexMapKitDirections (3.1.2):
+    - YandexMapKit (~> 3.1)
+    - YandexRuntime (~> 3.1)
+  - YandexMapKitPlaces (3.1.2):
+    - YandexMapKit (~> 3.1)
+    - YandexRuntime (~> 3.1)
+  - YandexRuntime (3.1.2)
+
+DEPENDENCIES:
+  - YandexMapKit (~> 3.1)
+  - YandexMapKitDirections (~> 3.1)
+  - YandexMapKitPlaces (~> 3.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - YandexMapKit
+    - YandexMapKitDirections
+    - YandexMapKitPlaces
+    - YandexRuntime
+
+SPEC CHECKSUMS:
+  YandexMapKit: 1684642ba0e6431f358fa4299357a43450197542
+  YandexMapKitDirections: ee6433fb1957e7938eccbbf5796c694616c85e7a
+  YandexMapKitPlaces: 1b85a1f5a3d7554c76089ffe10af6a530cb9c301
+  YandexRuntime: b49b1cea8438130323ebe13c52e4eab96325c4c8
+
+PODFILE CHECKSUM: 1084b39d3b421cf6cb07a1c845c8c2d0336f1276
+
+COCOAPODS: 1.5.3
