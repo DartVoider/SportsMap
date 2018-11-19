@@ -13,6 +13,8 @@ target 'SportsMap' do
   #pod ‘YandexMapKitSearch’, ’~> 3.1’ 
   #pod ‘YandexMapKitTransport’, ’~> 3.1’
   # Pods for SportsMap
+  # Библиотека для выпадающего меню
+  pod 'BTNavigationDropdownMenu'
 
   target 'SportsMapTests' do
     inherit! :search_paths

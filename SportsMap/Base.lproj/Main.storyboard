@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rIi-sZ-JyX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Lp-eY-cPJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,16 +44,34 @@
             </objects>
             <point key="canvasLocation" x="-929" y="-378"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EuT-ef-aSN">
+            <objects>
+                <navigationController id="9Lp-eY-cPJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VYF-cW-Z1i">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rIi-sZ-JyX" kind="relationship" relationship="rootViewController" id="eCT-YC-iqf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8e-o1-sEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2783" y="-45"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="80K-42-rF3">
             <objects>
-                <tabBarController id="rIi-sZ-JyX" sceneMemberID="viewController">
+                <tabBarController id="rIi-sZ-JyX" customClass="TabBarController" customModule="SportsMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5d1-qm-CGz"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2DP-WQ-28K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="navItem" destination="5d1-qm-CGz" id="cUb-RJ-JCS"/>
                         <segue destination="6IT-CD-sNE" kind="relationship" relationship="viewControllers" id="eEU-H3-sC4"/>
                         <segue destination="2JY-cu-7bd" kind="relationship" relationship="viewControllers" id="1Ob-Cj-MGa"/>
                     </connections>

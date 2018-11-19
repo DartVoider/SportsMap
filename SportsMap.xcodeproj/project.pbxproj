@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		735D52CC8E6625F625919782 /* Pods_SportsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089E1DC829139514DF956D4 /* Pods_SportsMap.framework */; };
 		9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69059D21A1C43600D83D60 /* MapViewController.swift */; };
+		9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */; };
 		9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747A53219C8E0C000E40B2 /* AppDelegate.swift */; };
 		9A747A56219C8E0C000E40B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747A55219C8E0C000E40B2 /* ViewController.swift */; };
 		9A747A59219C8E0C000E40B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A747A57219C8E0C000E40B2 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		7089E1DC829139514DF956D4 /* Pods_SportsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		938055C48933B8973ED3C7AA /* Pods_SportsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A69059D21A1C43600D83D60 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9A747A50219C8E0C000E40B2 /* SportsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A747A53219C8E0C000E40B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A747A55219C8E0C000E40B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				9A747A53219C8E0C000E40B2 /* AppDelegate.swift */,
 				9A747A55219C8E0C000E40B2 /* ViewController.swift */,
 				9A747A57219C8E0C000E40B2 /* Main.storyboard */,
+				9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */,
 				9A69059D21A1C43600D83D60 /* MapViewController.swift */,
 				9A747A5A219C8E0D000E40B2 /* Assets.xcassets */,
 				9A747A5C219C8E0D000E40B2 /* LaunchScreen.storyboard */,
@@ -183,6 +186,7 @@
 				9A747A4D219C8E0B000E40B2 /* Frameworks */,
 				9A747A4E219C8E0B000E40B2 /* Resources */,
 				459A1D7CEBC8C6556CC9AB20 /* [CP] Copy Pods Resources */,
+				3D318C4B23223C58540CDA19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +307,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3D318C4B23223C58540CDA19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SportsMap/Pods-SportsMap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTNavigationDropdownMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportsMap/Pods-SportsMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		459A1D7CEBC8C6556CC9AB20 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A747A56219C8E0C000E40B2 /* ViewController.swift in Sources */,
+				9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */,
 				9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */,
 				9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */,
 			);
