@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
 
 target 'SportsMap' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -15,6 +16,8 @@ target 'SportsMap' do
   # Pods for SportsMap
   # Библиотека для выпадающего меню
   pod 'BTNavigationDropdownMenu'
+  # Библиотека для запросов
+  pod 'Alamofire', '~> 4.7'
 
   target 'SportsMapTests' do
     inherit! :search_paths

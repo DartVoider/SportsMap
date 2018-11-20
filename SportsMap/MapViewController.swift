@@ -8,6 +8,7 @@
 
 import UIKit
 import YandexMapKit
+import Alamofire
 
 class MapViewController: UIViewController {
 
@@ -27,6 +28,10 @@ class MapViewController: UIViewController {
             with: YMKCameraPosition.init(target: TARGET_LOCATION1, zoom: 15, azimuth: 0, tilt: 0),
             animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 5),
             cameraCallback: nil)
+        
+        // создаем тестовый запрос
+        let ans = Alamofire.request("https://apidata.mos.ru/version")
+        print(ans)
         // Do any additional setup after loading the view.
     }
     //создание маркеров на карте
