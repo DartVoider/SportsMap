@@ -8,15 +8,19 @@
 
 import UIKit
 import YandexMapKit
-import Alamofire
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, YMKMapObjectTapListener {
+    func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+        print(point.latitude," ", point.longitude)
+        return true
+    }
+    
 
     @IBOutlet var mapView: YMKMapView!
     //тестовые точки на карте
-    let TARGET_LOCATION1 = YMKPoint(latitude: 55.85222, longitude: 37.61556)
-    let TARGET_LOCATION2 = YMKPoint(latitude: 55.75245, longitude: 37.67500)
-    let TARGET_LOCATION3 = YMKPoint(latitude: 55.15234, longitude: 37.59545)
+    let TARGET_LOCATION1 = YMKPoint(latitude: 55.731808792856, longitude: 37.78091007338)
+    let TARGET_LOCATION2 = YMKPoint(latitude: 55.69455687904856, longitude: 37.61882304504923)
+    let TARGET_LOCATION3 = YMKPoint(latitude: 55.69552810278989, longitude: 37.61820076455685)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,22 +29,18 @@ class MapViewController: UIViewController {
         createPlacemark(target: TARGET_LOCATION2)
         createPlacemark(target: TARGET_LOCATION3)
         mapView.mapWindow.map.move(
-            with: YMKCameraPosition.init(target: TARGET_LOCATION1, zoom: 15, azimuth: 0, tilt: 0),
+            with: YMKCameraPosition.init(target: TARGET_LOCATION2, zoom: 15, azimuth: 0, tilt: 0),
             animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 5),
             cameraCallback: nil)
-        
-        // создаем тестовый запрос
-        let ans = Alamofire.request("https://apidata.mos.ru/version")
-        print(ans)
         // Do any additional setup after loading the view.
     }
     //создание маркеров на карте
     func createPlacemark( target:YMKPoint) {
         let mapObjects = mapView.mapWindow.map.mapObjects
-        //mapObjects.addTapListener(with: self as! YMKMapObjectTapListener)
         let placemark = mapObjects.addPlacemark(with: target)
         placemark.opacity = 1
         placemark.setIconWith(UIImage(named:"SearchResult")!)
+        placemark.addTapListener(with: self)
     }
     //коллауты пока не работают
     /*private func showcallout( point: YMKPoint) {
