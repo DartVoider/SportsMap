@@ -15,6 +15,7 @@ class detailViewController: UIViewController {
     @IBOutlet weak var groundImage: UIImageView!
     @IBOutlet weak var groundName: UILabel!
     @IBOutlet weak var groundAddress: UILabel!
+    
     @IBOutlet weak var paidStatus: UILabel!
     @IBOutlet weak var groundWebsite: UILabel!
     @IBOutlet weak var groundPhone: UILabel!

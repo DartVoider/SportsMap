@@ -157,7 +157,7 @@
                         <outlet property="hasFirstaid" destination="TKO-oR-Asz" id="TEj-4M-7TC"/>
                         <outlet property="hasToilet" destination="lvr-j4-fQl" id="7xD-oJ-Jkm"/>
                         <outlet property="hasWifi" destination="RIJ-36-Tfb" id="mxy-Oe-GTa"/>
-                        <outlet property="paid" destination="4H3-WJ-drA" id="CW7-Xv-TNn"/>
+                        <outlet property="paidStatus" destination="4H3-WJ-drA" id="9dB-YC-hiA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtl-7g-Y6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
