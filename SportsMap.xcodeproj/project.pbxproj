@@ -19,6 +19,10 @@
 		9A747A74219C8E0E000E40B2 /* SportsMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747A73219C8E0E000E40B2 /* SportsMapUITests.swift */; };
 		9AD131E821A1F96600C751E0 /* SportsMap.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 9AD131E721A1F96600C751E0 /* SportsMap.xcworkspace */; };
 		BB0668167AFD7A82DDF05533 /* Pods_SportsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938055C48933B8973ED3C7AA /* Pods_SportsMapTests.framework */; };
+		CE297B2821A5639A006A786F /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297B2721A5639A006A786F /* detailViewController.swift */; };
+		CEE9F52921A4DC6F007DE924 /* listTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */; };
+		CEE9F52B21A4E2E4007DE924 /* sground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9F52A21A4E2E4007DE924 /* sground.swift */; };
+		CEE9F52D21A4E510007DE924 /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9F52C21A4E510007DE924 /* listTableViewCell.swift */; };
 		FB54BFC91267D1B721343668 /* Pods_SportsMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C1D643A8FD333C7915DBFA /* Pods_SportsMapUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +68,10 @@
 		9AD131E721A1F96600C751E0 /* SportsMap.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = SportsMap.xcworkspace; sourceTree = "<group>"; };
 		C8323AEE3CB41DEF2E6D10F4 /* Pods-SportsMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMapTests/Pods-SportsMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8C1D643A8FD333C7915DBFA /* Pods_SportsMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE297B2721A5639A006A786F /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewController.swift; sourceTree = "<group>"; };
+		CEE9F52A21A4E2E4007DE924 /* sground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sground.swift; sourceTree = "<group>"; };
+		CEE9F52C21A4E510007DE924 /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		DD06BF61D4D2E9333B5C6B7E /* Pods-SportsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMap/Pods-SportsMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,11 +142,15 @@
 				9A747A53219C8E0C000E40B2 /* AppDelegate.swift */,
 				9A747A55219C8E0C000E40B2 /* ViewController.swift */,
 				9A747A57219C8E0C000E40B2 /* Main.storyboard */,
+				CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */,
+				CEE9F52C21A4E510007DE924 /* listTableViewCell.swift */,
 				9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */,
 				9A69059D21A1C43600D83D60 /* MapViewController.swift */,
 				9A747A5A219C8E0D000E40B2 /* Assets.xcassets */,
 				9A747A5C219C8E0D000E40B2 /* LaunchScreen.storyboard */,
 				9A747A5F219C8E0D000E40B2 /* Info.plist */,
+				CEE9F52A21A4E2E4007DE924 /* sground.swift */,
+				CE297B2721A5639A006A786F /* detailViewController.swift */,
 			);
 			path = SportsMap;
 			sourceTree = "<group>";
@@ -435,7 +447,11 @@
 				9A747A56219C8E0C000E40B2 /* ViewController.swift in Sources */,
 				9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */,
 				9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */,
+				CEE9F52D21A4E510007DE924 /* listTableViewCell.swift in Sources */,
 				9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */,
+				CEE9F52B21A4E2E4007DE924 /* sground.swift in Sources */,
+				CEE9F52921A4DC6F007DE924 /* listTableViewController.swift in Sources */,
+				CE297B2821A5639A006A786F /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
