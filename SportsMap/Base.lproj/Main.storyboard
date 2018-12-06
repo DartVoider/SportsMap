@@ -176,10 +176,36 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="На карте" id="swI-Rm-9Ir"/>
                     <connections>
+                        <outlet property="fullCallout" destination="skz-nb-1fN" id="9nf-bI-BT6"/>
                         <outlet property="mapView" destination="aqB-H2-28x" id="ZOn-j8-5AF"/>
+                        <outlet property="simpleCallout" destination="dfK-kf-cci" id="wcT-X0-yhf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60u-8P-jRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="skz-nb-1fN" customClass="FullCallout" customModule="SportsMap" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="230" height="180"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="d8S-d8-zE1"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" id="dfK-kf-cci" customClass="SimpleCallout" customModule="SportsMap" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="3oq-bE-IzC"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
             <point key="canvasLocation" x="-929" y="-378"/>
         </scene>

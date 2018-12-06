@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		735D52CC8E6625F625919782 /* Pods_SportsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089E1DC829139514DF956D4 /* Pods_SportsMap.framework */; };
+		9A06604421B9BC4900BA4282 /* SimpleCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06604321B9BC4900BA4282 /* SimpleCallout.xib */; };
+		9A06604621B9BC8000BA4282 /* SimpleCallout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06604521B9BC8000BA4282 /* SimpleCallout.swift */; };
+		9A06604821B9D24C00BA4282 /* FullCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06604721B9D24C00BA4282 /* FullCallout.xib */; };
+		9A06604A21B9D3DE00BA4282 /* FullCallout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06604921B9D3DE00BA4282 /* FullCallout.swift */; };
+		9A06604C21B9DF0100BA4282 /* 2_pole_sochi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A06604B21B9DF0100BA4282 /* 2_pole_sochi.jpg */; };
 		9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69059D21A1C43600D83D60 /* MapViewController.swift */; };
 		9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */; };
 		9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747A53219C8E0C000E40B2 /* AppDelegate.swift */; };
@@ -50,6 +55,11 @@
 		57258B136520DC1D8005A824 /* Pods-SportsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMap/Pods-SportsMap.debug.xcconfig"; sourceTree = "<group>"; };
 		7089E1DC829139514DF956D4 /* Pods_SportsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		938055C48933B8973ED3C7AA /* Pods_SportsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A06604321B9BC4900BA4282 /* SimpleCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCallout.xib; sourceTree = "<group>"; };
+		9A06604521B9BC8000BA4282 /* SimpleCallout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCallout.swift; sourceTree = "<group>"; };
+		9A06604721B9D24C00BA4282 /* FullCallout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullCallout.xib; sourceTree = "<group>"; };
+		9A06604921B9D3DE00BA4282 /* FullCallout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCallout.swift; sourceTree = "<group>"; };
+		9A06604B21B9DF0100BA4282 /* 2_pole_sochi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_pole_sochi.jpg; sourceTree = "<group>"; };
 		9A69059D21A1C43600D83D60 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9A747A50219C8E0C000E40B2 /* SportsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,15 +152,20 @@
 				9A747A53219C8E0C000E40B2 /* AppDelegate.swift */,
 				9A747A55219C8E0C000E40B2 /* ViewController.swift */,
 				9A747A57219C8E0C000E40B2 /* Main.storyboard */,
+				9A06604321B9BC4900BA4282 /* SimpleCallout.xib */,
+				9A06604521B9BC8000BA4282 /* SimpleCallout.swift */,
 				CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */,
 				CEE9F52C21A4E510007DE924 /* listTableViewCell.swift */,
 				9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */,
 				9A69059D21A1C43600D83D60 /* MapViewController.swift */,
 				9A747A5A219C8E0D000E40B2 /* Assets.xcassets */,
+				9A06604B21B9DF0100BA4282 /* 2_pole_sochi.jpg */,
 				9A747A5C219C8E0D000E40B2 /* LaunchScreen.storyboard */,
 				9A747A5F219C8E0D000E40B2 /* Info.plist */,
 				CEE9F52A21A4E2E4007DE924 /* sground.swift */,
 				CE297B2721A5639A006A786F /* detailViewController.swift */,
+				9A06604721B9D24C00BA4282 /* FullCallout.xib */,
+				9A06604921B9D3DE00BA4282 /* FullCallout.swift */,
 			);
 			path = SportsMap;
 			sourceTree = "<group>";
@@ -295,7 +310,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A06604421B9BC4900BA4282 /* SimpleCallout.xib in Resources */,
+				9A06604821B9D24C00BA4282 /* FullCallout.xib in Resources */,
 				9A747A5E219C8E0D000E40B2 /* LaunchScreen.storyboard in Resources */,
+				9A06604C21B9DF0100BA4282 /* 2_pole_sochi.jpg in Resources */,
 				9A747A5B219C8E0D000E40B2 /* Assets.xcassets in Resources */,
 				9AD131E821A1F96600C751E0 /* SportsMap.xcworkspace in Resources */,
 				9A747A59219C8E0C000E40B2 /* Main.storyboard in Resources */,
@@ -448,8 +466,10 @@
 				9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */,
 				9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */,
 				CEE9F52D21A4E510007DE924 /* listTableViewCell.swift in Sources */,
+				9A06604621B9BC8000BA4282 /* SimpleCallout.swift in Sources */,
 				9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */,
 				CEE9F52B21A4E2E4007DE924 /* sground.swift in Sources */,
+				9A06604A21B9D3DE00BA4282 /* FullCallout.swift in Sources */,
 				CEE9F52921A4DC6F007DE924 /* listTableViewController.swift in Sources */,
 				CE297B2821A5639A006A786F /* detailViewController.swift in Sources */,
 			);
