@@ -10,27 +10,12 @@ import UIKit
 import YandexMapKit
 
 class MapViewController: UIViewController, YMKMapObjectTapListener {
-    @IBOutlet var simpleCallout: SimpleCallout!
-    @IBOutlet var fullCallout: FullCallout!
-    //обработка нажатия
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
         print(point.latitude," ", point.longitude)
-        /*let view = YRTViewProvider(uiView: fullCallout)
-        let mapObjects = mapView.mapWindow.map.mapObjects
-        let placemark = mapObjects.addPlacemark(with: point)
-        placemark.setViewWithView(view!)*/
-        //fullCallout.imageView.image = UIImage(contentsOfFile: <#T##String#>)
-        //fullCallout.imageView.image = UIImage(contentsOfFile: "2_pole_sochi.jpg")
-        fullCallout.translatesAutoresizingMaskIntoConstraints = false
-        mapView.addSubview(fullCallout)
-        let guide = mapView.safeAreaLayoutGuide
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "[fullCallout]", options: [], metrics: nil, views: ["fullCallout": fullCallout]))
-        NSLayoutConstraint.activate([
-            fullCallout.topAnchor.constraint(equalTo: guide.topAnchor, constant: 100),
-            fullCallout.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 100)])
         return true
     }
     
+
     @IBOutlet var mapView: YMKMapView!
     //тестовые точки на карте
     let TARGET_LOCATION1 = YMKPoint(latitude: 55.731808792856, longitude: 37.78091007338)
@@ -40,15 +25,16 @@ class MapViewController: UIViewController, YMKMapObjectTapListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         // подгружаем карты во вьюху
-        showSimpleCallout(target: TARGET_LOCATION1, count: 6355)
+        createPlacemark(target: TARGET_LOCATION1)
         createPlacemark(target: TARGET_LOCATION2)
         createPlacemark(target: TARGET_LOCATION3)
         mapView.mapWindow.map.move(
-            with: YMKCameraPosition.init(target: TARGET_LOCATION1, zoom: 15, azimuth: 0, tilt: 0),
+            with: YMKCameraPosition.init(target: TARGET_LOCATION2, zoom: 15, azimuth: 0, tilt: 0),
             animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 5),
             cameraCallback: nil)
+        // Do any additional setup after loading the view.
     }
-    //создание обычных маркеров на карте
+    //создание маркеров на карте
     func createPlacemark( target:YMKPoint) {
         let mapObjects = mapView.mapWindow.map.mapObjects
         let placemark = mapObjects.addPlacemark(with: target)
@@ -56,17 +42,32 @@ class MapViewController: UIViewController, YMKMapObjectTapListener {
         placemark.setIconWith(UIImage(named:"SearchResult")!)
         placemark.addTapListener(with: self)
     }
-    //создание маркеров с отображением номера
-    func showSimpleCallout(target:YMKPoint, count:Int){
+    //коллауты пока не работают
+    /*private func showcallout( point: YMKPoint) {
         let mapObjects = mapView.mapWindow.map.mapObjects
-        let placemark = mapObjects.addPlacemark(with: target)
-        simpleCallout.countLabel.text = String(count)
-        placemark.opacity = 1
-        placemark.setIconWith(convertViewToImage(simpleCallout)!)
-        placemark.addTapListener(with: self)
+        let testRedView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 2.0))
+        testRedView.backgroundColor = UIColor.red
+        let img = convertViewToImage(testRedView)
+        let x = 0.5
+        //let x = getAnchor(for: paint) ? 8.65 : 8.5
+        let tappableArea = YMKRect(min: CGPoint(x: 9, y: 8), max: CGPoint(x: 1, y: 1 ))
+        let style = YMKIconStyle(anchor: NSValue(cgPoint: CGPoint(x: 1, y: 1)),
+                                 rotationType: nil,
+                                 zIndex: NSNumber(value: 100),
+                                 flat: NSNumber(value: 0),
+                                 visible: NSNumber(value: 1),
+                                 scale: NSNumber(value: 1),
+                                 tappableArea: tappableArea)
+        style.anchor = NSValue(cgPoint: CGPoint(x: x, y: 1.05))
+        let callout = WBCalloutView(frame: CGRect(x: 0, y: 0, width: CGFloatcalloutWidth), height: CGFloat(calloutHeight)))
+        callaut.setup(annotation: selectedAnnotation)
+        placemark = mapObjects.addPlacemark(with: point, image: img, style: style)
+        placemark?.opacity = 1
+        placematk?.zIndex = 18
+        setCenterCamera(to: placemark! .geometry)
     }
-    //конвертация вьюхи в картинку (необходима для корректного отображения круглого маркера)
-    private func convertViewToImage(_ view: UIView) -> UIImage? {
+    
+    private func convertViewToImage(_ view: UIView) -> UIImage?{
         let size = CGSize(width: view.bounds.size.width, height: view.bounds.size.height + 20)
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         if let aContext = UIGraphicsGetCurrentContext() {
@@ -75,7 +76,7 @@ class MapViewController: UIViewController, YMKMapObjectTapListener {
         let img: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return img
-    }
+    }*/
     /*
     // MARK: - Navigation
 
