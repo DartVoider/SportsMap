@@ -6,7 +6,7 @@
 //  Copyright © 2018 SAD. All rights reserved.
 //
 
-import UIKit 
+import UIKit
 import YandexMapKit
 
 class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener  {
@@ -88,7 +88,7 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
             cameraCallback: nil*/)
         mapView.mapWindow.addSizeChangedListener(with: self)
     }
-    //создание обычных маркеров на карте
+    //создание маркеров на карте
     func createPlacemark( target:YMKPoint) {
         let mapObjects = mapView.mapWindow.map.mapObjects
         let placemark = mapObjects.addPlacemark(with: target)
