@@ -41,7 +41,7 @@ class listTableViewController: UITableViewController {
         if let castedCell = cell as? listTableViewCell {
             let ground = grounds[indexPath.row]
             castedCell.groundName.text = ground.name
-            castedCell.groundAdress.text = ground.address
+            //castedCell.groundAdress.text = ground.address
         } else {
             print ("error")
         }

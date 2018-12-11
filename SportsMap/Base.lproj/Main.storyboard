@@ -12,8 +12,9 @@
         <!--Списком-->
         <scene sceneID="J5A-0A-jqV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-QZ-aME" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2JY-cu-7bd" customClass="listTableViewController" customModule="SportsMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jR4-BK-Lrb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jR4-BK-Lrb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,18 +26,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-IT-fan">
-                                            <rect key="frame" x="16" y="27" width="92" height="74"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ground Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-Xb-84p">
-                                            <rect key="frame" x="139" y="54" width="107" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ground Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-Xb-84p">
+                                            <rect key="frame" x="232" y="51" width="107" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-IT-fan">
+                                            <rect key="frame" x="26" y="21" width="92" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="92" id="NlA-xj-iFE"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4ia-IT-fan" secondAttribute="bottom" constant="26" id="KBn-kb-pwk"/>
+                                        <constraint firstItem="ck7-Xb-84p" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4ia-IT-fan" secondAttribute="trailing" constant="8" symbolic="YES" id="My3-V6-jJF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ck7-Xb-84p" secondAttribute="trailing" constant="20" id="US8-7E-rVg"/>
+                                        <constraint firstItem="ck7-Xb-84p" firstAttribute="top" secondItem="n86-xF-gkN" secondAttribute="topMargin" constant="40" id="ahe-4y-PJ4"/>
+                                        <constraint firstItem="4ia-IT-fan" firstAttribute="top" secondItem="n86-xF-gkN" secondAttribute="topMargin" constant="10" id="aru-P7-iUv"/>
+                                        <constraint firstItem="4ia-IT-fan" firstAttribute="leading" secondItem="n86-xF-gkN" secondAttribute="leadingMargin" constant="10" id="gCt-p7-ted"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="groundImage" destination="4ia-IT-fan" id="Hu7-XV-RLf"/>
@@ -48,7 +58,6 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Списком" id="rUs-bc-qv5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-QZ-aME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-930.39999999999998" y="286.50674662668666"/>
         </scene>
