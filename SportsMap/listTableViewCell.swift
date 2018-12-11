@@ -13,7 +13,7 @@ class listTableViewCell: UITableViewCell {
     @IBOutlet weak var groundImage: UIImageView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib() 
         // Initialization code
     }
 

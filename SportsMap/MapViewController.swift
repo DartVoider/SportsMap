@@ -6,13 +6,13 @@
 //  Copyright © 2018 SAD. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 import YandexMapKit
 
 class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener  {
     func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateSource: YMKCameraUpdateSource, finished: Bool) {
         print(cameraPosition)
-        print(cameraUpdateSource)
+        print(cameraUpdateSource) 
     }
     
     @IBOutlet var simpleCallout: SimpleCallout!

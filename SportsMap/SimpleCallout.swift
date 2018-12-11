@@ -14,7 +14,7 @@ class SimpleCallout: UIView {
     @IBOutlet weak var countLabel: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        commonInit() 
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

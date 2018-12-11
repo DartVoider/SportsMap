@@ -14,7 +14,7 @@ class listTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        getGrounds()
+        getGrounds() 
         print("asdf")
 
         // Uncomment the following line to preserve selection between presentations

@@ -20,7 +20,7 @@ class TabBarController: UITabBarController {
         let menuView = BTNavigationDropdownMenu(title: BTTitle.index(1), items: items)
         menuView.animationDuration = 0; // без анимации
         
-        self.navItem.titleView = menuView
+        self.navItem.titleView = menuView 
         
         // по выбору меняем заголовок и, если необходимо, запоминаем выбор в self
         menuView.didSelectItemAtIndexHandler = {[] (indexPath: Int) -> () in

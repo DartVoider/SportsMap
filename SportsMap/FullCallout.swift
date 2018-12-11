@@ -26,7 +26,7 @@ class FullCallout: UIView {
     private func commonInit(){
         Bundle.main.loadNibNamed("FullCallout", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = self.bounds
+        contentView.frame = self.bounds 
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         //let rect = CGRect(x: 12, y: 11, width: 206, height: 97)
         //imageView.setNeedsDisplay(rect)
