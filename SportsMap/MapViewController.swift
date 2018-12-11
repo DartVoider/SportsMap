@@ -9,9 +9,20 @@
 import UIKit
 import YandexMapKit
 
-class MapViewController: UIViewController, YMKMapObjectTapListener {
+class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener  {
+    func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateSource: YMKCameraUpdateSource, finished: Bool) {
+        print(cameraPosition)
+        print(cameraUpdateSource)
+    }
+    
     @IBOutlet var simpleCallout: SimpleCallout!
     @IBOutlet var fullCallout: FullCallout!
+    var heightConstraint: NSLayoutConstraint!
+    var widthConstraint: NSLayoutConstraint!
+    //обработка изменения размера
+    func onMapWindowSizeChanged(with mapWindow: YMKMapWindow, newWidth: Int, newHeight: Int) {
+        print(newHeight," ",newWidth)
+    }
     //обработка нажатия
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
         print(point.latitude," ", point.longitude)
@@ -28,11 +39,28 @@ class MapViewController: UIViewController, YMKMapObjectTapListener {
         NSLayoutConstraint.activate([
             fullCallout.topAnchor.constraint(equalTo: guide.topAnchor, constant: 100),
             fullCallout.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 100)])
+        heightConstraint = NSLayoutConstraint(item: fullCallout, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 180.0)
+        widthConstraint = NSLayoutConstraint(item: fullCallout, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 230.0)
+        fullCallout.addConstraint(heightConstraint)
+        fullCallout.addConstraint(widthConstraint)
+        fullCallout.imageView.image = UIImage(contentsOfFile: "2_pole_sochi.jpg")
         return true
     }
     
     @IBOutlet var mapView: YMKMapView!
     //тестовые точки на карте
+    let CAO = YMKPoint(latitude: 55.754492, longitude: 37.622453)
+    let SAO = YMKPoint(latitude: 55.838384, longitude: 37.525765)
+    let SVAO = YMKPoint(latitude: 55.863894, longitude: 37.620923)
+    let VAO = YMKPoint(latitude: 55.787710, longitude: 37.775631)
+    let YVAO = YMKPoint(latitude: 55.692019, longitude: 37.754583)
+    let YAO = YMKPoint(latitude: 55.610906, longitude: 37.681479)
+    let YZAO = YMKPoint(latitude: 55.662735, longitude: 37.576178)
+    let ZAO = YMKPoint(latitude: 55.728003, longitude: 37.443533)
+    let SZAO = YMKPoint(latitude: 55.829370, longitude: 37.451546)
+    let ZelAO = YMKPoint(latitude: 55.987583, longitude: 37.194250)
+    let NAO = YMKPoint(latitude: 55.558121, longitude: 37.370724)
+    let TAO = YMKPoint(latitude: 55.355771, longitude: 37.146990)
     let TARGET_LOCATION1 = YMKPoint(latitude: 55.731808792856, longitude: 37.78091007338)
     let TARGET_LOCATION2 = YMKPoint(latitude: 55.69455687904856, longitude: 37.61882304504923)
     let TARGET_LOCATION3 = YMKPoint(latitude: 55.69552810278989, longitude: 37.61820076455685)
@@ -40,13 +68,25 @@ class MapViewController: UIViewController, YMKMapObjectTapListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         // подгружаем карты во вьюху
-        showSimpleCallout(target: TARGET_LOCATION1, count: 6355)
+        showSimpleCallout(target: CAO, value: "ЦАО")
+        showSimpleCallout(target: SAO, value: "САО")
+        showSimpleCallout(target: SVAO, value: "СВАО")
+        showSimpleCallout(target: VAO, value: "ВАО")
+        showSimpleCallout(target: YVAO, value: "ЮВАО")
+        showSimpleCallout(target: YAO, value: "ЮАО")
+        showSimpleCallout(target: YZAO, value: "ЮЗАО")
+        showSimpleCallout(target: ZAO, value: "ЗАО")
+        showSimpleCallout(target: SZAO, value: "СЗАО")
+        showSimpleCallout(target: ZelAO, value: "ЗАО")
+        showSimpleCallout(target: NAO, value: "НАО")
+        showSimpleCallout(target: TAO, value: "ТАО")
         createPlacemark(target: TARGET_LOCATION2)
         createPlacemark(target: TARGET_LOCATION3)
         mapView.mapWindow.map.move(
-            with: YMKCameraPosition.init(target: TARGET_LOCATION1, zoom: 15, azimuth: 0, tilt: 0),
-            animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 5),
-            cameraCallback: nil)
+            with: YMKCameraPosition.init(target: CAO, zoom: 10, azimuth: 0, tilt: 0)/*,
+            animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 3),
+            cameraCallback: nil*/)
+        mapView.mapWindow.addSizeChangedListener(with: self)
     }
     //создание обычных маркеров на карте
     func createPlacemark( target:YMKPoint) {
@@ -56,11 +96,11 @@ class MapViewController: UIViewController, YMKMapObjectTapListener {
         placemark.setIconWith(UIImage(named:"SearchResult")!)
         placemark.addTapListener(with: self)
     }
-    //создание маркеров с отображением номера
-    func showSimpleCallout(target:YMKPoint, count:Int){
+    //создание маркеров с отображением округа
+    func showSimpleCallout(target:YMKPoint, value:String){
         let mapObjects = mapView.mapWindow.map.mapObjects
         let placemark = mapObjects.addPlacemark(with: target)
-        simpleCallout.countLabel.text = String(count)
+        simpleCallout.countLabel.text = value
         placemark.opacity = 1
         placemark.setIconWith(convertViewToImage(simpleCallout)!)
         placemark.addTapListener(with: self)
