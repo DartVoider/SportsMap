@@ -12,6 +12,7 @@
 		9A4CBF6A21C057F000EE5715 /* SimpleCallout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CBF6621C057F000EE5715 /* SimpleCallout.swift */; };
 		9A4CBF6B21C057F000EE5715 /* SimpleCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4CBF6721C057F000EE5715 /* SimpleCallout.xib */; };
 		9A4CBF6C21C057F000EE5715 /* FullCallout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CBF6821C057F000EE5715 /* FullCallout.swift */; };
+		9A4CBF6E21C071AA00EE5715 /* 2_pole_sochi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A4CBF6D21C071AA00EE5715 /* 2_pole_sochi.jpg */; };
 		9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69059D21A1C43600D83D60 /* MapViewController.swift */; };
 		9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */; };
 		9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747A53219C8E0C000E40B2 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		9A4CBF6621C057F000EE5715 /* SimpleCallout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCallout.swift; sourceTree = "<group>"; };
 		9A4CBF6721C057F000EE5715 /* SimpleCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleCallout.xib; sourceTree = "<group>"; };
 		9A4CBF6821C057F000EE5715 /* FullCallout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullCallout.swift; sourceTree = "<group>"; };
+		9A4CBF6D21C071AA00EE5715 /* 2_pole_sochi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_pole_sochi.jpg; sourceTree = "<group>"; };
 		9A69059D21A1C43600D83D60 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9A6B976F21A2DF0500AAF2D9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9A747A50219C8E0C000E40B2 /* SportsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				9A747A57219C8E0C000E40B2 /* Main.storyboard */,
 				9A4CBF6821C057F000EE5715 /* FullCallout.swift */,
 				9A4CBF6521C057F000EE5715 /* FullCallout.xib */,
+				9A4CBF6D21C071AA00EE5715 /* 2_pole_sochi.jpg */,
 				9A4CBF6621C057F000EE5715 /* SimpleCallout.swift */,
 				9A4CBF6721C057F000EE5715 /* SimpleCallout.xib */,
 				CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */,
@@ -310,6 +313,7 @@
 				9A4CBF6B21C057F000EE5715 /* SimpleCallout.xib in Resources */,
 				9A747A5E219C8E0D000E40B2 /* LaunchScreen.storyboard in Resources */,
 				9A4CBF6921C057F000EE5715 /* FullCallout.xib in Resources */,
+				9A4CBF6E21C071AA00EE5715 /* 2_pole_sochi.jpg in Resources */,
 				9A747A5B219C8E0D000E40B2 /* Assets.xcassets in Resources */,
 				9AD131E821A1F96600C751E0 /* SportsMap.xcworkspace in Resources */,
 				9A747A59219C8E0C000E40B2 /* Main.storyboard in Resources */,

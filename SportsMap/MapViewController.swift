@@ -38,12 +38,11 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "[fullCallout]", options: [], metrics: nil, views: ["fullCallout": fullCallout]))
         NSLayoutConstraint.activate([
             fullCallout.topAnchor.constraint(equalTo: guide.topAnchor, constant: 100),
-            fullCallout.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 100)])
+            fullCallout.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 50)])
         heightConstraint = NSLayoutConstraint(item: fullCallout, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 180.0)
         widthConstraint = NSLayoutConstraint(item: fullCallout, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 230.0)
         fullCallout.addConstraint(heightConstraint)
         fullCallout.addConstraint(widthConstraint)
-        fullCallout.imageView.image = UIImage(contentsOfFile: "2_pole_sochi.jpg")
         return true
     }
     
@@ -125,5 +124,5 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
