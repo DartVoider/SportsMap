@@ -11,10 +11,9 @@ import UIKit
 class listTableViewCell: UITableViewCell {
     @IBOutlet weak var groundName: UILabel!
     @IBOutlet weak var groundImage: UIImageView!
-    @IBOutlet var groundAdress: UILabel!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib() 
         // Initialization code
     }
 

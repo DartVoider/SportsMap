@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // ключ для API mos.ru: c3553d2754398b41bd1cbeea416e5d39
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { 
         // Override point for customization after application launch.
         // Задаем ключ для работы с картами
         YMKMapKit.setApiKey("cc3dd498-afb1-4f73-a091-d2f73514c157")
