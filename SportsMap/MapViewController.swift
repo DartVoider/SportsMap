@@ -19,6 +19,9 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
     @IBOutlet var fullCallout: FullCallout!
     var heightConstraint: NSLayoutConstraint!
     var widthConstraint: NSLayoutConstraint!
+    var grounds = GroundsSet()
+    var bbox = BoundingBox(ULlon: 37.811764, ULlat: 55.810805, BRlon: 37.829859, BRlat: 55.803325)
+    
     //обработка изменения размера
     func onMapWindowSizeChanged(with mapWindow: YMKMapWindow, newWidth: Int, newHeight: Int) {
         print(newHeight," ",newWidth)
@@ -66,19 +69,20 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        grounds.getGrounds(bbox: bbox)
         // подгружаем карты во вьюху
-        showSimpleCallout(target: CAO, value: "ЦАО")
-        showSimpleCallout(target: SAO, value: "САО")
-        showSimpleCallout(target: SVAO, value: "СВАО")
-        showSimpleCallout(target: VAO, value: "ВАО")
-        showSimpleCallout(target: YVAO, value: "ЮВАО")
-        showSimpleCallout(target: YAO, value: "ЮАО")
-        showSimpleCallout(target: YZAO, value: "ЮЗАО")
-        showSimpleCallout(target: ZAO, value: "ЗАО")
-        showSimpleCallout(target: SZAO, value: "СЗАО")
-        showSimpleCallout(target: ZelAO, value: "ЗАО")
-        showSimpleCallout(target: NAO, value: "НАО")
-        showSimpleCallout(target: TAO, value: "ТАО")
+//        showSimpleCallout(target: CAO, value: "ЦАО")
+//        showSimpleCallout(target: SAO, value: "САО")
+//        showSimpleCallout(target: SVAO, value: "СВАО")
+//        showSimpleCallout(target: VAO, value: "ВАО")
+//        showSimpleCallout(target: YVAO, value: "ЮВАО")
+//        showSimpleCallout(target: YAO, value: "ЮАО")
+//        showSimpleCallout(target: YZAO, value: "ЮЗАО")
+//        showSimpleCallout(target: ZAO, value: "ЗАО")
+//        showSimpleCallout(target: SZAO, value: "СЗАО")
+//        showSimpleCallout(target: ZelAO, value: "ЗАО")
+//        showSimpleCallout(target: NAO, value: "НАО")
+//        showSimpleCallout(target: TAO, value: "ТАО")
         createPlacemark(target: TARGET_LOCATION2)
         createPlacemark(target: TARGET_LOCATION3)
         mapView.mapWindow.map.move(
