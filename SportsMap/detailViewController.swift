@@ -46,6 +46,14 @@ class detailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func ObjectInfo(sender: UIButton){
+        performSegue(withIdentifier: "showDetails", sender: self)
+        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let vc = segue.destination as? detailViewController
+            print("buttontapseague")
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
