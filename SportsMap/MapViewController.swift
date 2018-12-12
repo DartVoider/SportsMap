@@ -9,7 +9,31 @@
 import UIKit
 import YandexMapKit
 
-class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener  {
+class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener, YMKInertiaMoveListener, YMKMapInputListener, YMKLocationSimulatorListener  {
+    func onSimulationFinished() {
+        print("SimulationFinish")
+    }
+    
+    func onMapTap(with map: YMKMap, point: YMKPoint) {
+        print("MapTap")
+    }
+    
+    func onMapLongTap(with map: YMKMap, point: YMKPoint) {
+        print("MapLongTap")
+    }
+    
+    func onStart(with map: YMKMap, finish finishCameraPosition: YMKCameraPosition) {
+        print("Start")
+    }
+    
+    func onCancel(with map: YMKMap, cameraPosition: YMKCameraPosition) {
+        print("Cancel")
+    }
+    
+    func onFinish(with map: YMKMap, cameraPosition: YMKCameraPosition) {
+        print("Finish")
+    }
+    
     func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateSource: YMKCameraUpdateSource, finished: Bool) {
         print(cameraPosition)
         print(cameraUpdateSource) 
