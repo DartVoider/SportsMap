@@ -17,6 +17,9 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
     
     @IBOutlet var simpleCallout: SimpleCallout!
     @IBOutlet var fullCallout: FullCallout!
+    @IBOutlet var subView: subView!
+    
+    
     var heightConstraint: NSLayoutConstraint!
     var widthConstraint: NSLayoutConstraint!
     //обработка изменения размера
@@ -30,19 +33,21 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
         let mapObjects = mapView.mapWindow.map.mapObjects
         let placemark = mapObjects.addPlacemark(with: point)
         placemark.setViewWithView(view!)*/
-        //fullCallout.imageView.image = UIImage(contentsOfFile: <#T##String#>)
-        //fullCallout.imageView.image = UIImage(contentsOfFile: "2_pole_sochi.jpg")
-        fullCallout.translatesAutoresizingMaskIntoConstraints = false
-        mapView.addSubview(fullCallout)
+        
+        
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.addSubview(subView)
+        subView.image.image = UIImage(named: "2_pole_sochi.jpg")
+        subView.layer.cornerRadius = 10
         let guide = mapView.safeAreaLayoutGuide
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "[fullCallout]", options: [], metrics: nil, views: ["fullCallout": fullCallout]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "[fullCallout]", options: [], metrics: nil, views: ["fullCallout": subView]))
         NSLayoutConstraint.activate([
-            fullCallout.topAnchor.constraint(equalTo: guide.topAnchor, constant: 100),
-            fullCallout.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 50)])
-        heightConstraint = NSLayoutConstraint(item: fullCallout, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 180.0)
-        widthConstraint = NSLayoutConstraint(item: fullCallout, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 230.0)
-        fullCallout.addConstraint(heightConstraint)
-        fullCallout.addConstraint(widthConstraint)
+            subView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 100),
+            subView.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 50)])
+        heightConstraint = NSLayoutConstraint(item: subView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 180.0)
+        widthConstraint = NSLayoutConstraint(item: subView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 230.0)
+        subView.addConstraint(heightConstraint)
+        subView.addConstraint(widthConstraint)
         return true
     }
     
@@ -86,7 +91,18 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
             animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 3),
             cameraCallback: nil*/)
         mapView.mapWindow.addSizeChangedListener(with: self)
+        
+        let scale = UIScreen.main.scale
+        let userLocationLayer = mapView.mapWindow.map.userLocationLayer
+        userLocationLayer.isEnabled = true
+        userLocationLayer.isHeadingEnabled = true
+        userLocationLayer.setAnchorWithAnchorNormal(
+            CGPoint(x: 0.5 * mapView.frame.size.width * scale, y: 0.5 * mapView.frame.size.height * scale),
+            anchorCourse: CGPoint(x: 0.5 * mapView.frame.size.width * scale, y: 0.83 * mapView.frame.size.height * scale))
+        //userLocationLayer.setObjectListenerWith(self)
+
     }
+    
     //создание маркеров на карте
     func createPlacemark( target:YMKPoint) {
         let mapObjects = mapView.mapWindow.map.mapObjects

@@ -25,6 +25,7 @@ class detailViewController: UIViewController {
     @IBOutlet weak var hasWifi: UILabel!
     @IBOutlet weak var hasATM: UILabel!
     @IBOutlet weak var hasFirstaid: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
 
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ class detailViewController: UIViewController {
             hasWifi.text = "Есть Wi-Fi: " + item.wifi
             hasATM.text = "Есть банкомат: " + item.atm
             hasFirstaid.text = "Есть медпункт: " + item.firstaid
+            imageView.image = UIImage(contentsOfFile: "2_pole_sochi.jpg")
         }
         // Do any additional setup after loading the view.
     }

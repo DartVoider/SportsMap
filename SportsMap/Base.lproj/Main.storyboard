@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Lp-eY-cPJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Lp-eY-cPJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,6 @@
         <!--Списком-->
         <scene sceneID="J5A-0A-jqV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-QZ-aME" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2JY-cu-7bd" customClass="listTableViewController" customModule="SportsMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jR4-BK-Lrb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -58,6 +57,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Списком" id="rUs-bc-qv5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-QZ-aME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-930.39999999999998" y="286.50674662668666"/>
         </scene>
@@ -166,6 +166,7 @@
                         <outlet property="hasFirstaid" destination="TKO-oR-Asz" id="TEj-4M-7TC"/>
                         <outlet property="hasToilet" destination="lvr-j4-fQl" id="7xD-oJ-Jkm"/>
                         <outlet property="hasWifi" destination="RIJ-36-Tfb" id="mxy-Oe-GTa"/>
+                        <outlet property="imageView" destination="lzE-J7-F3D" id="cyl-q3-B7u"/>
                         <outlet property="paidStatus" destination="4H3-WJ-drA" id="9dB-YC-hiA"/>
                     </connections>
                 </viewController>
@@ -188,9 +189,57 @@
                         <outlet property="fullCallout" destination="skz-nb-1fN" id="9nf-bI-BT6"/>
                         <outlet property="mapView" destination="aqB-H2-28x" id="ZOn-j8-5AF"/>
                         <outlet property="simpleCallout" destination="dfK-kf-cci" id="wcT-X0-yhf"/>
+                        <outlet property="subView" destination="f1z-uC-A13" id="JD2-Hn-LsC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60u-8P-jRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="f1z-uC-A13" userLabel="subView" customClass="subView" customModule="SportsMap" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAS-mb-YRE">
+                            <rect key="frame" x="8" y="93" width="224" height="30"/>
+                            <state key="normal" title="Полная информация"/>
+                            <connections>
+                                <segue destination="SI5-x0-fxQ" kind="show" id="G0K-ma-MHL"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4j-8a-ZcO">
+                            <rect key="frame" x="30" y="3" width="180" height="69"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="groundName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-uN-QE9">
+                            <rect key="frame" x="8" y="77" width="224" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnp-jB-bNb">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="cancel-512"/>
+                            <connections>
+                                <action selector="tapCancel:" destination="f1z-uC-A13" eventType="touchUpInside" id="x3K-5h-vmU"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dAS-mb-YRE" firstAttribute="leading" secondItem="I8c-Zp-4So" secondAttribute="leading" constant="8" id="9Em-4w-9fW"/>
+                        <constraint firstItem="I8c-Zp-4So" firstAttribute="trailing" secondItem="dAS-mb-YRE" secondAttribute="trailing" constant="8" id="ClK-Uk-Y5b"/>
+                        <constraint firstItem="I8c-Zp-4So" firstAttribute="bottom" secondItem="dAS-mb-YRE" secondAttribute="bottom" constant="5" id="GQr-KP-0qT"/>
+                        <constraint firstItem="I8c-Zp-4So" firstAttribute="bottom" secondItem="pNq-uN-QE9" secondAttribute="bottom" constant="30" id="NdW-vS-4Un"/>
+                        <constraint firstItem="r4j-8a-ZcO" firstAttribute="leading" secondItem="I8c-Zp-4So" secondAttribute="leading" constant="30" id="UfN-aF-WH4"/>
+                        <constraint firstItem="I8c-Zp-4So" firstAttribute="trailing" secondItem="pNq-uN-QE9" secondAttribute="trailing" constant="8" id="nGf-EF-IPd"/>
+                        <constraint firstItem="I8c-Zp-4So" firstAttribute="trailing" secondItem="r4j-8a-ZcO" secondAttribute="trailing" constant="30" id="q7E-oC-ZAh"/>
+                        <constraint firstItem="pNq-uN-QE9" firstAttribute="leading" secondItem="I8c-Zp-4So" secondAttribute="leading" constant="8" id="rp9-w9-OaP"/>
+                        <constraint firstItem="r4j-8a-ZcO" firstAttribute="top" secondItem="I8c-Zp-4So" secondAttribute="top" constant="3" id="uyg-lF-vUw"/>
+                        <constraint firstItem="pNq-uN-QE9" firstAttribute="top" secondItem="r4j-8a-ZcO" secondAttribute="bottom" constant="5" id="zNp-xB-Nwa"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="I8c-Zp-4So"/>
+                    <connections>
+                        <outlet property="image" destination="r4j-8a-ZcO" id="a1J-rU-bFs"/>
+                    </connections>
+                </view>
                 <view contentMode="scaleToFill" id="skz-nb-1fN" customClass="FullCallout" customModule="SportsMap" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="230" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -270,4 +319,10 @@
             <point key="canvasLocation" x="794" y="-628"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel-512" width="512" height="512"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="G0K-ma-MHL"/>
+    </inferredMetricsTieBreakers>
 </document>

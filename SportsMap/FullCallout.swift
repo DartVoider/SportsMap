@@ -19,16 +19,9 @@ class FullCallout: UIView {
     }
     @IBAction func mainButtonTap(_ sender: Any) {
         print("Button Tap")
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            let detailVC = segue.destination as? detailViewController
-            print("buttontapseague")
-            detailVC!.hasEquip.text = "Возможна аренда инвентаря: "// + item.equip
-            detailVC!.hasDroom.text = "Есть раздевалки: "// + item.droom
-            detailVC!.hasToilet.text = "Есть туалеты: "// + item.toilet
-            detailVC!.hasWifi.text = "Есть Wi-Fi: "// + item.wifi
-            detailVC!.hasATM.text = "Есть банкомат: "// + item.atm
-            detailVC!.hasFirstaid.text = "Есть медпункт: "// + item.firstaid
-        }
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
+        newViewController.present(newViewController, animated: true)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,5 +49,16 @@ class FullCallout: UIView {
             print("buttontapseague")
         }
     }*/
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailVC = segue.destination as? detailViewController
+        print("buttontapseague")
+        detailVC!.hasEquip.text = "Возможна аренда инвентаря: "// + item.equip
+        detailVC!.hasDroom.text = "Есть раздевалки: "// + item.droom
+        detailVC!.hasToilet.text = "Есть туалеты: "// + item.toilet
+        detailVC!.hasWifi.text = "Есть Wi-Fi: "// + item.wifi
+        detailVC!.hasATM.text = "Есть банкомат: "// + item.atm
+        detailVC!.hasFirstaid.text = "Есть медпункт: "// + item.firstaid
+    }
 
 }
