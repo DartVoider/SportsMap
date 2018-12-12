@@ -24,6 +24,8 @@
 		9AD131E821A1F96600C751E0 /* SportsMap.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 9AD131E721A1F96600C751E0 /* SportsMap.xcworkspace */; };
 		BB0668167AFD7A82DDF05533 /* Pods_SportsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938055C48933B8973ED3C7AA /* Pods_SportsMapTests.framework */; };
 		CE297B2821A5639A006A786F /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE297B2721A5639A006A786F /* detailViewController.swift */; };
+		CEB82ECF21C06AEB00C6459D /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB82ECE21C06AEB00C6459D /* BoundingBox.swift */; };
+		CEB82ED121C074A300C6459D /* GroundsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB82ED021C074A300C6459D /* GroundsSet.swift */; };
 		CEE9F52921A4DC6F007DE924 /* listTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */; };
 		CEE9F52B21A4E2E4007DE924 /* sground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9F52A21A4E2E4007DE924 /* sground.swift */; };
 		CEE9F52D21A4E510007DE924 /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9F52C21A4E510007DE924 /* listTableViewCell.swift */; };
@@ -77,6 +79,8 @@
 		C8323AEE3CB41DEF2E6D10F4 /* Pods-SportsMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMapTests/Pods-SportsMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8C1D643A8FD333C7915DBFA /* Pods_SportsMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE297B2721A5639A006A786F /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		CEB82ECE21C06AEB00C6459D /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		CEB82ED021C074A300C6459D /* GroundsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundsSet.swift; sourceTree = "<group>"; };
 		CEE9F52821A4DC6F007DE924 /* listTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewController.swift; sourceTree = "<group>"; };
 		CEE9F52A21A4E2E4007DE924 /* sground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sground.swift; sourceTree = "<group>"; };
 		CEE9F52C21A4E510007DE924 /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				9A747A5F219C8E0D000E40B2 /* Info.plist */,
 				CEE9F52A21A4E2E4007DE924 /* sground.swift */,
 				CE297B2721A5639A006A786F /* detailViewController.swift */,
+				CEB82ECE21C06AEB00C6459D /* BoundingBox.swift */,
+				CEB82ED021C074A300C6459D /* GroundsSet.swift */,
 			);
 			path = SportsMap;
 			sourceTree = "<group>";
@@ -461,11 +467,13 @@
 				9A747A56219C8E0C000E40B2 /* ViewController.swift in Sources */,
 				9A6B977021A2DF0500AAF2D9 /* TabBarController.swift in Sources */,
 				9A69059E21A1C43600D83D60 /* MapViewController.swift in Sources */,
+				CEB82ECF21C06AEB00C6459D /* BoundingBox.swift in Sources */,
 				CEE9F52D21A4E510007DE924 /* listTableViewCell.swift in Sources */,
 				9A747A54219C8E0C000E40B2 /* AppDelegate.swift in Sources */,
 				9A4CBF6A21C057F000EE5715 /* SimpleCallout.swift in Sources */,
 				CEE9F52B21A4E2E4007DE924 /* sground.swift in Sources */,
 				9A4CBF6C21C057F000EE5715 /* FullCallout.swift in Sources */,
+				CEB82ED121C074A300C6459D /* GroundsSet.swift in Sources */,
 				CEE9F52921A4DC6F007DE924 /* listTableViewController.swift in Sources */,
 				CE297B2821A5639A006A786F /* detailViewController.swift in Sources */,
 			);
