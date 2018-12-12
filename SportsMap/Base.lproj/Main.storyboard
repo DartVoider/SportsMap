@@ -12,7 +12,6 @@
         <!--Списком-->
         <scene sceneID="J5A-0A-jqV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-QZ-aME" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2JY-cu-7bd" customClass="listTableViewController" customModule="SportsMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jR4-BK-Lrb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -58,6 +57,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Списком" id="rUs-bc-qv5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-QZ-aME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-930.39999999999998" y="286.50674662668666"/>
         </scene>

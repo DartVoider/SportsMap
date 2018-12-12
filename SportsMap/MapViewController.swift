@@ -9,29 +9,33 @@
 import UIKit
 import YandexMapKit
 
-class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener, YMKInertiaMoveListener, YMKMapInputListener, YMKLocationSimulatorListener  {
+class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeChangedListener, YMKMapCameraListener, YMKInertiaMoveListener, YMKMapInputListener, YMKLocationSimulatorListener, YMKMapLoadedListener, UIGestureRecognizerDelegate  {
+    func onMapLoaded(with statistics: YMKMapLoadStatistics) {
+        print("abcdfe1")
+    }
+    
     func onSimulationFinished() {
-        print("SimulationFinish")
+        print("abcdfe2")
     }
     
     func onMapTap(with map: YMKMap, point: YMKPoint) {
-        print("MapTap")
+        print("abcdfe3")
     }
     
     func onMapLongTap(with map: YMKMap, point: YMKPoint) {
-        print("MapLongTap")
+        print("abcdfe4")
     }
     
     func onStart(with map: YMKMap, finish finishCameraPosition: YMKCameraPosition) {
-        print("Start")
+        print("abcdfe5")
     }
     
     func onCancel(with map: YMKMap, cameraPosition: YMKCameraPosition) {
-        print("Cancel")
+        print("abcdfe6")
     }
     
     func onFinish(with map: YMKMap, cameraPosition: YMKCameraPosition) {
-        print("Finish")
+        print("abcdfe7")
     }
     
     func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateSource: YMKCameraUpdateSource, finished: Bool) {
@@ -45,7 +49,11 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
     var widthConstraint: NSLayoutConstraint!
     var grounds = GroundsSet()
     var bbox = BoundingBox(ULlon: 37.811764, ULlat: 55.810805, BRlon: 37.829859, BRlat: 55.803325)
-    
+    let panGestureRecognizer = UIPanGestureRecognizer()
+    var panGestureAnchorPoint: CGPoint?
+    let pinchGestureRecognizer = UIPinchGestureRecognizer()
+    var pinchGestureAnchorScale: CGFloat?
+
     //обработка изменения размера
     func onMapWindowSizeChanged(with mapWindow: YMKMapWindow, newWidth: Int, newHeight: Int) {
         print(newHeight," ",newWidth)
@@ -53,12 +61,6 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
     //обработка нажатия
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
         print(point.latitude," ", point.longitude)
-        /*let view = YRTViewProvider(uiView: fullCallout)
-        let mapObjects = mapView.mapWindow.map.mapObjects
-        let placemark = mapObjects.addPlacemark(with: point)
-        placemark.setViewWithView(view!)*/
-        //fullCallout.imageView.image = UIImage(contentsOfFile: <#T##String#>)
-        //fullCallout.imageView.image = UIImage(contentsOfFile: "2_pole_sochi.jpg")
         fullCallout.translatesAutoresizingMaskIntoConstraints = false
         mapView.addSubview(fullCallout)
         let guide = mapView.safeAreaLayoutGuide
@@ -70,6 +72,7 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
         widthConstraint = NSLayoutConstraint(item: fullCallout, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 230.0)
         fullCallout.addConstraint(heightConstraint)
         fullCallout.addConstraint(widthConstraint)
+        preparePlacemarks()
         return true
     }
     
@@ -94,6 +97,7 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
     override func viewDidLoad() {
         super.viewDidLoad()
         grounds.getGrounds(bbox: bbox)
+        preparePlacemarks()
         // подгружаем карты во вьюху
 //        showSimpleCallout(target: CAO, value: "ЦАО")
 //        showSimpleCallout(target: SAO, value: "САО")
@@ -114,7 +118,62 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
             animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 3),
             cameraCallback: nil*/)
         mapView.mapWindow.addSizeChangedListener(with: self)
+        panGestureRecognizer.addTarget(self, action: #selector(handlePanGesture(_:)))
+        panGestureRecognizer.maximumNumberOfTouches = 1 // (1)
+        mapView.addGestureRecognizer(panGestureRecognizer)
+        pinchGestureRecognizer.addTarget(self, action: #selector(handlePinchGesture(_:)))
+        mapView.addGestureRecognizer(pinchGestureRecognizer)
     }
+    //обработка свайпа
+    @objc func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        guard panGestureRecognizer === sender else { assert(false); return }
+        switch sender.state {
+        case .began:
+            assert(panGestureAnchorPoint == nil)
+            panGestureAnchorPoint = sender.location(in: view) // (2)
+        case .changed:
+            guard let panGestureAnchorPoint = panGestureAnchorPoint else { assert(false); return }
+            
+            let gesturePoint = sender.location(in: view)
+            
+            // (3)
+            print(gesturePoint.x - panGestureAnchorPoint.x)
+            print(gesturePoint.y - panGestureAnchorPoint.y)
+            self.panGestureAnchorPoint = gesturePoint
+            
+        case .cancelled, .ended:
+            panGestureAnchorPoint = nil
+            
+        case .failed, .possible:
+            assert(panGestureAnchorPoint == nil)
+            break
+        }
+    }
+    
+    @objc func handlePinchGesture(_ gestureRecognizer: UIPinchGestureRecognizer) {
+        guard pinchGestureRecognizer === gestureRecognizer else { assert(false); return }
+        
+        switch gestureRecognizer.state {
+        case .began:
+            assert(pinchGestureAnchorScale == nil)
+            pinchGestureAnchorScale = gestureRecognizer.scale
+            
+        case .changed:
+            guard let pinchGestureAnchorScale = pinchGestureAnchorScale else { assert(false); return }
+            
+            let gestureScale = gestureRecognizer.scale
+            print(gestureScale - pinchGestureAnchorScale)
+            self.pinchGestureAnchorScale = gestureScale
+            
+        case .cancelled, .ended:
+            pinchGestureAnchorScale = nil
+            
+        case .failed, .possible:
+            assert(pinchGestureAnchorScale == nil)
+            break
+        }
+    }
+    
     //создание маркеров на карте
     func createPlacemark( target:YMKPoint) {
         let mapObjects = mapView.mapWindow.map.mapObjects
@@ -142,6 +201,12 @@ class MapViewController: UIViewController, YMKMapObjectTapListener, YMKMapSizeCh
         let img: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return img
+    }
+    
+    func preparePlacemarks() {
+        for i in grounds.set {
+            createPlacemark(target: i.geometry)
+        }
     }
     /*
     // MARK: - Navigation
