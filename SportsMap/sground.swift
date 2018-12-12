@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import YandexMapKit
 
 struct SGround {
-    let geometry : GeoPoint
+    let geometry : YMKPoint
     let name: String
     let address: String
     let website: String
@@ -31,7 +32,7 @@ extension SGround {
             let geometry_data = geometry_info["coordinates"] as? NSArray,
             let long = geometry_data.firstObject as? Double,
             let lati = geometry_data.lastObject as? Double,
-            let geometry = GeoPoint(lon: long, lat: lati),
+//            let geometry = YMKPoint(latitude: lati, longitude:  long),
             let ground_prop = ground_data["properties"] as? NSDictionary,
             let ground_info = ground_prop["Attributes"] as? NSDictionary,
             let name = ground_info["ObjectName"] as? String,
@@ -47,7 +48,7 @@ extension SGround {
             let paid = ground_info["Paid"] as? String
             else { return nil }
 
-        self.geometry = geometry
+        self.geometry = YMKPoint(latitude: lati, longitude: long)
         self.name = name
         self.address = address
         self.website = website

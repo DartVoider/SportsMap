@@ -14,6 +14,7 @@ class GroundsSet: NSObject {
     
     func getGrounds(bbox: BoundingBox) {
         print("mukalo")
+        self.set.removeAll()
         let urlString = String(format: "https://apidata.mos.ru/v1/datasets/%i/features?api_key=c3553d2754398b41bd1cbeea416e5d39&bbox=%@", 886 /*menu.getDatasetID()*/, bbox.stringBuild())
         guard let url = URL(string: urlString) else {
             print("oh no")

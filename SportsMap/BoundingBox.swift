@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YandexMapKit
 
 struct GeoPoint {
     var longitude = 0 as Double
@@ -21,14 +22,12 @@ extension GeoPoint {
 }
 
 class BoundingBox: NSObject {
-    var UpLeft = GeoPoint()
-    var BottomRight = GeoPoint()
+    var UpLeft = YMKPoint()
+    var BottomRight = YMKPoint()
     
     init(ULlon: Double, ULlat: Double, BRlon: Double, BRlat: Double) {
-        self.UpLeft.longitude = ULlon
-        self.UpLeft.latitude = ULlat
-        self.BottomRight.longitude = BRlon
-        self.BottomRight.latitude = BRlat
+        self.UpLeft = YMKPoint(latitude: ULlat, longitude: ULlon)
+        self.BottomRight = YMKPoint(latitude: BRlat, longitude: BRlon)
     }
     
     func stringBuild() -> NSString {
